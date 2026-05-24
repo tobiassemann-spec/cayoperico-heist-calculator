@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cayo Perico Heist Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Cayo Perico Heist Calculator</h1>
+    <p class="subtitle">GTA Online Profit Calculator</p>
+
+    <div class="card">
+
+        <!-- MAIN TARGET -->
+        <label>Main Target</label>
+        <select id="mainTarget"></select>
+
+        <!-- SECONDARY LOOT -->
+        <label>Secondary Loot</label>
+
+        <div class="loot-grid">
+
+            <div class="loot-item">
+                <span>Cash</span>
+                <small>25% bag space</small>
+                <input type="number" class="lootAmount" data-type="cash" data-space="25" value="0">
+            </div>
+
+            <div class="loot-item">
+                <span>Artwork</span>
+                <small>50% bag space</small>
+                <input type="number" class="lootAmount" data-type="artwork" data-space="50" value="0">
+            </div>
+
+            <div class="loot-item">
+                <span>Weed</span>
+                <small>37.5% bag space</small>
+                <input type="number" class="lootAmount" data-type="weed" data-space="37.5" value="0">
+            </div>
+
+            <div class="loot-item">
+                <span>Cocaine</span>
+                <small>50% bag space</small>
+                <input type="number" class="lootAmount" data-type="cocaine" data-space="50" value="0">
+            </div>
+
+            <div class="loot-item">
+                <span>Gold</span>
+                <small>66.6% bag space</small>
+                <input type="number" class="lootAmount" data-type="gold" data-space="66.6" value="0">
+            </div>
+
+        </div>
+
+        <!-- BAG -->
+        <div class="bag-status">
+            <p>Bag Space Used</p>
+            <h3 id="bagSpace">0%</h3>
+        </div>
+
+        <!-- SAFE CASH -->
+        <label>Safe Cash ($)</label>
+        <input type="number" id="safeCash" value="0">
+
+        <!-- PLAYERS -->
+        <label>Players</label>
+        <select id="players">
+            <option value="1">1 Player</option>
+            <option value="2">2 Players</option>
+            <option value="3">3 Players</option>
+            <option value="4">4 Players</option>
+        </select>
+
+        <!-- CUT -->
+        <div id="cutContainer">
+            <label>Your Cut (%)</label>
+            <input type="range" id="playerCut" min="15" max="100" value="85">
+            <span id="cutValue">85%</span>
+        </div>
+
+        <button onclick="calculateCayo()">Calculate</button>
+
+    </div>
+
+    <!-- RESULTS -->
+    <div class="card results">
+
+        <h2>Results</h2>
+
+        <p>Total Value:</p>
+        <h3 id="total">$0</h3>
+
+        <p>Your Earnings:</p>
+        <h3 id="earnings">$0</h3>
+
+        <p>Pavel Cut:</p>
+        <h3 id="pavelDisplay">$0</h3>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
